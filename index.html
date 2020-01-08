@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <script defer src="script.js"></script>
+  
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-    <div class="animation-area">
+    <!-- <div class="animation-area">
         <ul class="elems">
             <li></li>
             <li></li>
@@ -18,24 +18,31 @@
             <li></li>
             <li></li>
         </ul>
-    </div>
+    </div> -->
     <h1 class="head-text">Tic-Tac-Toe</h1>
-
+    
+    <h3 id="turn-text"></h3>
+    
     <div class="container">
         <div class="grid-container" id="board">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+            <div class="box" onClick="playGame(this,1);" id="box-0"></div>
+            <div class="box" onClick="playGame(this,2);" id="box-1"></div>
+            <div class="box" onClick="playGame(this,4);" id="box-2"></div>
+            <div class="box" onClick="playGame(this,8);" id="box-3"></div>
+            <div class="box" onClick="playGame(this,16);" id="box-4"></div>
+            <div class="box" onClick="playGame(this,32);" id="box-5"></div>
+            <div class="box" onClick="playGame(this,64);" id="box-6"></div>
+            <div class="box" onClick="playGame(this,128);" id="box-7"></div>
+            <div class="box" onClick="playGame(this,256);" id="box-8"></div>
         </div>
         <br>
      
     </div>
-    <!-- <button id="reset-btn">Reset</button> -->
+    <div class="game-over">
+        <div class="text"></div>
+    </div>
+    <button id="reset-btn" >Reset</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
