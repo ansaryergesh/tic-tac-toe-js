@@ -1,21 +1,41 @@
 let players = [];
 let symbols = ["X","O"];
-let scores = [0, 0];
-
+let scores = [];
+// let messageText;
 let winValues = [7,56,73,84,146,273,292,448];
-
-let gameOver = false;
 
 scores[0]
 let turnOf = 0;
 players[0] = "Player1";
 players[1] = "Player2";
 
-//Build Board
+let gameOver;
+
+function reset(){
+    gameOver = false;
+    scores = [0, 0];
+    messageText = document.getElementById("turn-text");
+    scatchBoard();
+}
+
+function scatchBoard() {
+    var board = document.getElementById("board");
+    var display="";
+    var unique = 1
+    for (var i=0; i < 9; i++) {
+        display += '<div onclick="playGame(this,'+unique+');" class="box"></div>';
+        unique=unique*2;
+    }
+    board.innerHTML = display;
+    
+}
 
 //helpers
-function updateGameMessage(message) {
-    document.getElementById("turn-text").innerText = message;
+function updateGameMessage(message=false) {
+    if(!message){
+        messageText.innerText= players[turnOf] + "'s turn "
+    }
+    else {messageText.innerText = message;}
 }
 //Check if winning
 
@@ -47,11 +67,12 @@ function playGame(clickDiv, boxValue) {
     }
 }
 
+
 function switchTurn() {
     if(turnOf == 0) turnOf = 1; 
     else turnOf = 0;
 
-    updateGameMessage(players[turnOf] + "'s turn ");
+    updateGameMessage();
 }
 //Keep track of whose turn
 
