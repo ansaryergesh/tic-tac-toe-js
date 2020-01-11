@@ -1,7 +1,7 @@
 let players = [];
-let symbols = ["X","O"];
+let symbols = ["X", "O"];
 let scores = [];
-// let messageText;
+let messageText;
 let winValues = [7,56,73,84,146,273,292,448];
 
 scores[0]
@@ -11,10 +11,30 @@ players[1] = "Player2";
 
 let gameOver;
 
+
+function giveName() {
+    player1 = document.getElementById("player-1");
+    player2 = document.getElementById("player-2");
+    if (player1.value == "") {
+        players[0] = "Player1"
+    }
+    else {players[0] = player1.value;}
+
+    if (player2.value == "") {
+        players[1] = "Player2"
+    }
+    
+   else{ players[1] = player2.value;}
+    scatchBoard();
+    document.getElementById("board").classList.remove("hide");
+    document.getElementById("buttons").classList.remove("hide");
+    document.getElementById("form").classList.add("hide");
+}
 function reset(){
     gameOver = false;
     scores = [0, 0];
     messageText = document.getElementById("turn-text");
+    messageText.innerText = "";
     scatchBoard();
 }
 
@@ -36,6 +56,13 @@ function updateGameMessage(message=false) {
         messageText.innerText= players[turnOf] + "'s turn "
     }
     else {messageText.innerText = message;}
+}
+
+function refresh() {
+    location.reload();
+    document.getElementById("form").classList.remove("hide");
+    document.getElementById("board").classList.add("hide");
+    document.getElementById("buttons").classList.add("hide");
 }
 //Check if winning
 
