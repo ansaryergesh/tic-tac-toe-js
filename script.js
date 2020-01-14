@@ -37,6 +37,7 @@ function reset(){
     messageText = document.getElementById("turn-text");
     messageText.innerText = "";
     scatchBoard();
+    turn = 0;
 }
 
 function scatchBoard() {
@@ -75,7 +76,6 @@ function winCheck() {
             updateGameMessage(players[turnOf] + " Wins!");
             beep.src = "http://freesoundeffect.net/sites/default/files/menu-sfx--wrong---invalid-selection---7-sound-effect-9982300.mp3"
             gameOver = true;
-
         }
 
     }
@@ -107,10 +107,3 @@ function switchTurn() {
 
     updateGameMessage();
 }
-//Keep track of whose turn
-
-//Create players
-
-//win algorithm
-
-//reset game
