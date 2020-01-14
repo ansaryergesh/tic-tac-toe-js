@@ -3,6 +3,7 @@ let symbols = ["X", "O"];
 let scores = [];
 let messageText;
 let winValues = [7,56,73,84,146,273,292,448];
+let beep = new Audio();
 
 scores[0]
 let turnOf = 0;
@@ -40,10 +41,12 @@ function reset(){
 
 function scatchBoard() {
     var board = document.getElementById("board");
+    beep.src = "http://freesoundeffect.net/sites/default/files/sci-fi-beepelectric-153-sound-effect-36810303.mp3"
     var display="";
-    var unique = 1
+    var unique = 1;
+
     for (var i=0; i < 9; i++) {
-        display += '<div onclick="playGame(this,'+unique+');" class="box"></div>';
+        display += '<div onmousedown="beep.play()" onclick="playGame(this,'+unique+');" class="box"></div>';
         unique=unique*2;
     }
     board.innerHTML = display;
@@ -70,7 +73,9 @@ function winCheck() {
     for (var i = 0; i< winValues.length; i++){
         if((scores[turnOf] & winValues[i]) == winValues[i]){
             updateGameMessage(players[turnOf] + " Wins!");
+            beep.src = "http://freesoundeffect.net/sites/default/files/menu-sfx--wrong---invalid-selection---7-sound-effect-9982300.mp3"
             gameOver = true;
+
         }
 
     }
@@ -86,13 +91,14 @@ function winCheck() {
 function playGame(clickDiv, boxValue) {
     if (!gameOver) {
     scores[turnOf] += boxValue;
-
+    
     clickDiv.onclick = "";
     clickDiv.innerHTML = "<span> "+ symbols[turnOf] +" </span>";
     winCheck();
     if (!gameOver) {switchTurn();}
     }
 }
+
 
 
 function switchTurn() {
