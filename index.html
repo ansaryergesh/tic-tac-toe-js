@@ -5,11 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   
     <title>Tic-Tac-Toe</title>
 </head>
 <body onload="reset();">
+    <i data-modal-target="#modal" class="add-btn fa fa-gear fa-spin" style="font-size:44px"></i>
     
+    <div class="container setting" id="modal">
+        <h1>Settings</h1>
+        <div class="setting-form">
+            <button data-close-submit   class="sound">Sound ON/OFF</button>
+            <button  data-close-button class="cancel">Close</button>
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+
     <div class="animation-area">
         <ul class="elems">
             <li></li>
@@ -47,5 +60,6 @@
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>

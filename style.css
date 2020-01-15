@@ -11,6 +11,15 @@ body {
 
 }
 
+.add-btn {
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border: none;
+    cursor: pointer;
+  }
+
 .container {
     z-index: 9999;
     display: flex;
@@ -145,10 +154,60 @@ span {
     }
 }
 
+/* popup */
+.setting {
+    display: block;
+    /* display: none; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 6px solid salmon; 
+    padding: 2em;
+    width: 400px;
+    text-align: center;
+    background: #fff;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    border-radius: 10px;
+    z-index: 999;
+    width: 500px;
+    max-width: 80%;
+}
+.setting.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+.github {
+    color: black;
+}
+.code-sourse {
+    margin-top: 50px;
+    bottom: 0;
+    width: 100%;
 
+}
+  
 
-
-
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(121, 113, 234);
+    pointer-events: none;
+  }
+  
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
 /* Media querie for 768 and max screens */
 
 @media only screen and (min-width: 768px) {
