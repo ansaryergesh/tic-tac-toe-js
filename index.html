@@ -10,16 +10,10 @@
   
     <title>Tic-Tac-Toe</title>
 </head>
-<body onload="reset();">
+<body>
     <i data-modal-target="#modal" class="add-btn fa fa-gear fa-spin" style="font-size:44px"></i>
     
-    <div class="container setting" id="modal">
-        <h1>Settings</h1>
-        <div class="setting-form">
-            <button data-close-submit   class="sound">Sound ON/OFF</button>
-            <button  data-close-button class="cancel">Close</button>
-        </div>
-    </div>
+
 
     <div id="overlay"></div>
 
@@ -46,7 +40,16 @@
     <h3 id="turn-text"></h3>
     
     <div class="container">
-        <div class="grid-container hide" id="board">
+        <div class="grid-container"  id="board">
+            <div id="1" class="box" data-position="0"></div>
+            <div id="2" class="box" data-position="1"></div>
+            <div id="3" class="box" data-position="2"></div>
+            <div id="4" class="box" data-position="3"></div>
+            <div id="5" class="box" data-position="4"></div>
+            <div id="6" class="box" data-position="5"></div>
+            <div id="7" class="box" data-position="6"></div>
+            <div id="8" class="box" data-position="7"></div>
+            <div id="9" class="box" data-position="8"></div>
         </div>
         <br>
      
@@ -55,11 +58,11 @@
         <div class="text"></div>
     </div>
     <div id = "buttons" class="hide">
-        <button id= "button" onclick="reset();">Play Again</button>
-        <button id="button" onclick="refresh();">New Game</button>
+        <button id= "button" >Play Again</button>
+        <button id="button" >New Game</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 
 </body>
 </html>
