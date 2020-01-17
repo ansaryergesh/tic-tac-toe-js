@@ -4,8 +4,8 @@ const Player = (name,mark) => {
     const getMark = () => mark;
     const addMark = (position) => {
         gameBoard.getBoard()[position] = mark;
-        let boxPosition = document.getElementById(`${position}`);
-        boxPosition.textContent =gameBoard.getBoard()[position];
+        let boxPosition = document.getElementById(`${position}` );
+        boxPosition.textContent = gameBoard.getBoard()[position];
     }
 
     return {getName,getMark,addMark,};
@@ -56,7 +56,7 @@ const displayController = (() => {
     const playGame = () => {
         let boxCells = document.querySelectorAll('.box');
         for(let boxCell of boxCells) {
-            boxCell.addEventListener('click', boardMark(this));
+            boxCell.addEventListener('click', boardMark);
         }
     }
 
@@ -69,8 +69,24 @@ const displayController = (() => {
         }
     }
 
-    function boardMark(clickBox) {
-        let positionBox = document.querySelector(".box").getAttribute("id");
+    // function boardMark(clickBox) {
+    //     let positionBox = parseInt(document.querySelector(".box").getAttribute("id"));
+    //     // let positionBox = parseInt(e.target.getAttribute("data-position"));
+    //     if (gameBoard.getBoard()[positionBox] == " ") {
+    //         (counter % 2 == 0) ? player1.addMark(positionBox) : player2.addMark(positionBox);
+    //         counter = countClicks();
+
+    //         switchTurn(counter);
+    //         // let message = document.getElementById("turn-text");
+    //         // let isGameOver = gameOver();
+            
+    //     }
+        
+    // }
+
+    function boardMark(e) {
+        let positionBox = parseInt(e.target.getAttribute("data-position"));
+        // let positionBox = parseInt(e.target.getAttribute("data-position"));
         if (gameBoard.getBoard()[positionBox] == " ") {
             (counter % 2 == 0) ? player1.addMark(positionBox) : player2.addMark(positionBox);
             counter = countClicks();
