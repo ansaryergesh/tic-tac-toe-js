@@ -77,13 +77,19 @@ const displayController = (() => {
             (counter % 2 == 0) ? player1.addMark(positionBox) : player2.addMark(positionBox);
             counter = countClicks();
             switchTurn(counter);
-            // if (counter == 9) {
-            //     document.getElementById("turn-text").innerText = "draw game!"
-            // }
+            if (counter == 9) {
+                document.getElementById("turn-text").innerText = "draw game!"
+            }
             let message = document.getElementById("turn-text");
             winning(gameBoard.getBoard(), player1.getMark() || player2.getMark())
             if( endgame === true) {
                 winMessage(player1.getName() || player2.getName());
+                removeMark(e);
+            }
+
+            if (counter === 9 && endgame !== true) {
+                document.getElementById("turn-text").innerText = "draw game!"
+                endgame = true;
                 removeMark(e);
             }
         }
@@ -127,13 +133,6 @@ const displayController = (() => {
 
     
 
-    function draw() {
-        counter = countClicks();
-        if (counter == 9 && !endgame) {
-            document.getElementById("turn-text").innerText = "draw game!"
-            endgame = true;
-        }
-    }
 
 
     return {playGame,switchTurn,boardMark,removeMark,};
