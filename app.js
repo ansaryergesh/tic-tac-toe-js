@@ -52,6 +52,7 @@ const displayController = (() => {
         countClicks = clickCounter();
         counter = 0;
         switchTurn(counter);
+        endgame = false;
     }
 
     const playGame = () => {
@@ -92,6 +93,11 @@ const displayController = (() => {
                 endgame = true;
                 removeMark(e);
             }
+
+            // if (message.innerText.includes("!")) {
+            //     removeMark(e)
+            // }
+           
         }
         
     }
@@ -131,12 +137,37 @@ const displayController = (() => {
         })
     }
 
+    const resetGame = () => {
+        let resetBtn = document.getElementById("button1");
+        resetBtn.addEventListener('click', () => {
+            gameBoard.resetBoard();
+            resetClicks();
+        })
+    }
+
+    const newGame = () => {
+        let newBtn = document.getElementById("button2");
+        newBtn.addEventListener('click', () => {
+            location.reload();
+        })
+    }
+
     
 
 
 
-    return {playGame,switchTurn,boardMark,removeMark,};
+    return {playGame,switchTurn,boardMark,removeMark,resetGame,newGame,};
 
 })();
 
-displayController.playGame();
+const gameController = (() => {
+    const gameActions = () => {
+        displayController.playGame();
+        displayController.resetGame();
+        displayController.newGame();
+    }
+
+    return {gameActions,};
+})();
+
+gameController.gameActions();
