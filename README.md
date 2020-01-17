@@ -1,6 +1,9 @@
 # Tic-Tac-Toe
+< Tic-tac-toe game with sound effects and attracting design
 
-
+#Features
+ - Two player/ Computer Player
+ - Score table
 
 ## Built With Javascript
 
