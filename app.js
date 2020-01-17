@@ -52,6 +52,7 @@ const displayController = (() => {
         countClicks = clickCounter();
         counter = 0;
         switchTurn(counter);
+        endgame = false;
     }
 
     const playGame = () => {
@@ -92,6 +93,11 @@ const displayController = (() => {
                 endgame = true;
                 removeMark(e);
             }
+
+            // if (message.innerText.includes("!")) {
+            //     removeMark(e)
+            // }
+           
         }
         
     }
