@@ -149,6 +149,11 @@ const gameBoard = (() => {
         boxCell.addEventListener('click', markEachBoard);
       }
     };
+
+    const displayScore = () => {
+        document.getElementById('score').innerText = `${player1.getName()}: ${player1.getScore()}
+        ${player1.getName()}: ${player1.getScore()}`
+    }
   
     function playBtn() {
       const btnPlay = document.getElementById('btn-play');
@@ -157,6 +162,9 @@ const gameBoard = (() => {
         document.getElementById('board').classList.remove('hide');
         document.getElementById('buttons').classList.remove('hide');
         document.getElementById('form').classList.add('hide');
+        document.getElementById('score-table').classList.remove('hide');
+        displayScore();
+
       });
     }
     const newGame = () => {
@@ -183,6 +191,7 @@ const gameBoard = (() => {
       playBtn,
       giveName,
       restartGame,
+      displayScore,
     };
   })();
   
