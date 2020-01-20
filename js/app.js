@@ -1,4 +1,3 @@
-/*eslint no-undef: "error"*/
 const gameBoard = (() => {
     const board = [];
   
@@ -20,15 +19,21 @@ const gameBoard = (() => {
   })();
   
   const Player = (name, mark) => {
+    let score = 0;
     const getName = () => name;
     const getMark = () => mark;
+    const getScore = () => score;
     const addMark = (position) => {
       gameBoard.getBoard()[position] = mark;
       const boxPosition = document.getElementById(`${position}`);
       boxPosition.textContent = gameBoard.getBoard()[position];
     };
+
+    const addScore = () => {
+        score += 1;
+    }
   
-    return { getName, getMark, addMark };
+    return { getName, getMark, addMark,getScore,addScore, };
   };
   
   const displayController = (() => {
