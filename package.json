@@ -1,0 +1,23 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "Tic-tac-toe game with sound effect",
+  "main": "app.js",
+  "dependencies": {
+    "semver": "^7.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansaryergesh/advanced-tic-tac-toe.git"
+  },
+  "author": "Ansar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ansaryergesh/advanced-tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/ansaryergesh/advanced-tic-tac-toe#readme"
+}

@@ -84,27 +84,29 @@ const displayController = (() => {
             (counter % 2 == 0) ? player1.addMark(positionBox) : player2.addMark(positionBox);
             counter = countClicks();
             switchTurn(counter);
-
+            let sound = false;
             let message = document.getElementById("turn-text");
             let mark = (counter % 2 == 0)  ? player2.getMark() : player1.getMark()
             winning(gameBoard.getBoard(), mark)
             if( endgame === true) {
                 let namePlayer = (counter % 2 == 0) ? player2.getName() : player1.getName()
                 winMessage(namePlayer);
-                beep.src = "http://freesoundeffect.net/sites/default/files/menu-sfx--wrong---invalid-selection---7-sound-effect-9982300.mp3"
+                // beep.src = "http://freesoundeffect.net/sites/default/files/menu-sfx--wrong---invalid-selection---7-sound-effect-9982300.mp3"
                 removeMark(e);
+                sound = true;
             }
 
             if (counter === 9 && endgame !== true) {
                 document.getElementById("turn-text").innerText = "draw game!"
                 endgame = true;
-                beep.src = "http://freesoundeffect.net/sites/default/files/menu-sfx--wrong---invalid-selection---7-sound-effect-9982300.mp3"
+                // beep.src = "http://freesoundeffect.net/sites/default/files/menu-sfx--wrong---invalid-selection---7-sound-effect-9982300.mp3"
                 removeMark(e);
+                sound = true;
             }
 
-            // if (message.innerText.includes("!")) {
-            //     removeMark(e)
-            // }
+            if (sound === true) {
+                beep.src = "http://freesoundeffect.net/sites/default/files/menu-sfx--wrong---invalid-selection---7-sound-effect-9982300.mp3";
+            }
            
         }
         
