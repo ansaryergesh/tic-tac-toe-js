@@ -1,7 +1,7 @@
 # Tic-Tac-Toe
 < Tic-tac-toe game with sound effects and attracting design
 
-#Features
+# Features
  - Two player/ Computer Player
  - Score table
 
@@ -29,7 +29,7 @@ To use this project you will need to download this repository and save in your c
 
 - open the index.html file with any browser
 
-## Authors
+## Author:
 
 👤 **Ansar Yergeshov**
 
