@@ -126,9 +126,10 @@ const gameBoard = (() => {
         const mark = counter % 2 === 0 ? player2.getMark() : player1.getMark();
         winning(gameBoard.getBoard(), mark);
         if (endgame === true) {
-          const namePlayer =
-            counter % 2 === 0 ? player2.getName() : player1.getName();
+          const namePlayer =  counter % 2 === 0 ? player2.getName() : player1.getName();
           winMessage(namePlayer);
+          counter % 2 === 0 ? player2.addScore() : player1.addScore();
+          displayScore();  
         }
   
         if (counter === 9 && endgame !== true) {
@@ -152,7 +153,7 @@ const gameBoard = (() => {
 
     const displayScore = () => {
         document.getElementById('score').innerText = `${player1.getName()}: ${player1.getScore()}
-        ${player1.getName()}: ${player1.getScore()}`
+        ${player2.getName()}: ${player2.getScore()}`
     }
   
     function playBtn() {
