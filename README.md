@@ -17,8 +17,8 @@
 
 ## Screenshot
 
-![alt text](img/comp.jpeg)
-![alt text](img/mob.jpeg)
+![alt text](img/comp.jpg)
+![alt text](img/mob.jpg)
 
 ## Getting Started
 
