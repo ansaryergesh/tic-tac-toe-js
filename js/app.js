@@ -154,8 +154,10 @@ const gameBoard = (() => {
     };
 
     const displayScore = () => {
-        document.getElementById('score').innerText = `${player1.getName()}: ${player1.getScore()}
-        ${player2.getName()}: ${player2.getScore()}`
+        score1 = document.getElementById('score1');
+        score2 = document.getElementById('score2')
+        score1.innerText = `${player1.getName()}: ${player1.getScore()}`;
+        score2.innerText = `${player2.getName()}: ${player2.getScore()}`;
     }
   
     function playBtn() {

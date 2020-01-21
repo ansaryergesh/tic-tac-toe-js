@@ -13,7 +13,12 @@
 
 ## Live Demo
 
-[Live Demo Link](https://ansaryergesh.github.io/advanced-tic-tac-toe/)
+[Live Demo Link](https://ansaryergesh.github.io/tic-tac-toe-js/)
+
+## Screenshot
+
+![alt text](img/comp.jpeg)
+![alt text](img/mob.jpeg)
 
 ## Getting Started
 
