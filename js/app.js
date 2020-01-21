@@ -141,6 +141,8 @@ const gameBoard = (() => {
           for (const boxCell of boxCells) {
             boxCell.removeEventListener('click', markEachBoard);
           }
+
+          document.getElementById('turn-text').classList.add('shaking')
         }
       }
     }
@@ -180,6 +182,7 @@ const gameBoard = (() => {
       rstBtn.addEventListener('click', () => {
         gameBoard.resetBoard();
         resetClicks();
+        document.getElementById('turn-text').classList.remove('shaking');
       });
     };
   
