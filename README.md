@@ -18,7 +18,6 @@
 ## Screenshot
 
 ![alt text](img/comp.jpg)
-![alt text](img/mob.jpg)
 
 ## Getting Started
 
