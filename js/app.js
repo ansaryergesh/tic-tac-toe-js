@@ -113,9 +113,9 @@ const gameBoard = (() => {
       });
     };
   
-    const winMessage = (name) => {
-      msg.innerText = `${name} is winner!`;
-    }
+  const winMessage = (name) => {
+    msg.innerText = `${name} is winner!`;
+  }
   
     const overlayTrue = () => {
       document.getElementById('buttons').style.display = 'block';
