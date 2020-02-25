@@ -136,6 +136,8 @@ const gameBoard = (() => {
           document.querySelector('.name1').classList.remove('red');
           counter % 2 === 0 ? player2.addScore() : player1.addScore();
           displayScore();  
+          document.getElementById("buttons").style.display="block";
+          document.getElementById("overlay").style.display="block";
         }
   
         if (counter === 9 && endgame !== true) {
@@ -191,6 +193,8 @@ const gameBoard = (() => {
         gameBoard.resetBoard();
         resetClicks();
         document.getElementById('turn-text').classList.remove('shaking');
+        document.getElementById("buttons").style.display="none";
+        document.getElementById("overlay").style.display="none";
       });
     };
   

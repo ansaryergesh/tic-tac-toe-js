@@ -187,6 +187,29 @@ span {
   animation-delay: 2.5s;
 }
 
+#buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background-color: rgb(160, 159, 159);
+  border-radius: 15px;
+  padding: 80px;
+  z-index: 101;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+}
+
 @keyframes animate {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -288,7 +311,7 @@ span {
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   border-radius: 10px;
-  z-index: 999;
+  z-index: 102;
   width: 500px;
   max-width: 80%;
 }
@@ -307,22 +330,19 @@ span {
   width: 100%;
 }
 
-#overlay {
-  position: fixed;
-  opacity: 0;
-  transition: 200ms ease-in-out;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(121, 113, 234);
-  pointer-events: none;
+
+.overlay {
+  background: rgba(51, 51, 51, 0.8);
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
 }
 
-#overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}
 
 /* Media querie for 768 and max screens */
 
