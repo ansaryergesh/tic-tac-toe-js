@@ -304,18 +304,8 @@ span {
   }
 }
 
-.setting.active {
-  transform: translate(-50%, -50%) scale(1);
-}
-
 .github {
   color: black;
-}
-
-.code-sourse {
-  margin-top: 50px;
-  bottom: 0;
-  width: 100%;
 }
 
 
