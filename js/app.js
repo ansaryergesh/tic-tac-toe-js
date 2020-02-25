@@ -85,7 +85,6 @@ const gameBoard = (() => {
         document.querySelector('.name1').classList.add('red');
         document.querySelector('.name2').classList.remove('red');
       } else {
-        // msg.innerText = `${player2.getName()}'s Turn`;
         document.querySelector('.name2').classList.add('red');
         document.querySelector('.name1').classList.remove('red');
       }
@@ -118,12 +117,12 @@ const gameBoard = (() => {
       msg.innerText = `${name} is winner!`;
     }
   
-    const overlayTrue = () =>  {
-      document.getElementById("buttons").style.display="block";
-      document.getElementById("overlay").style.display="block";
-      document.querySelector('.name2').classList.remove('red');
-      document.querySelector('.name1').classList.remove('red');
-    }
+  const overlayTrue = () => {
+    document.getElementById("buttons").style.display="block";
+    document.getElementById("overlay").style.display="block";
+    document.querySelector('.name2').classList.remove('red');
+    document.querySelector('.name1').classList.remove('red');
+  }
     function markEachBoard(e) {
       const positionBox = parseInt(e.target.getAttribute('id'), 10);
       if (gameBoard.getBoard()[positionBox] === ' ') {
