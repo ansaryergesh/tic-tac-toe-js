@@ -30,10 +30,16 @@ const Player = (name, mark) => {
   };
 
   const addScore = () => {
-      score += 1;
+    score += 1;
   }
 
-  return { getName, getMark, addMark,getScore,addScore, };
+  return { 
+    getName,
+    getMark,
+    addMark,
+    getScore,
+    addScore,
+  };
 };
 
 const displayController = (() => {
@@ -48,8 +54,8 @@ const displayController = (() => {
   let endgame = false;
 
   function giveName() {
-    name1 = p1.value;
-    name2 = p2.value;
+    const name1 = p1.value;
+    const name2 = p2.value;
     if (p1.value === '') {
       player1 = Player('Player1', 'X');
     } else {
@@ -66,7 +72,7 @@ const displayController = (() => {
   function clickCounter() {
     return () => {
       counter += 1;
-      return counter;
+    return counter;
     };
   }
 
@@ -80,15 +86,6 @@ const displayController = (() => {
     }
   }
 
-  const switchTurn = (counter) => {
-    if (counter % 2 === 0) {
-      document.querySelector('.name1').classList.add('red');
-      document.querySelector('.name2').classList.remove('red');
-    } else {
-      document.querySelector('.name2').classList.add('red');
-      document.querySelector('.name1').classList.remove('red');
-    }
-  };
 
   const winning = (board, symbol) => {
     const win = [
@@ -104,9 +101,9 @@ const displayController = (() => {
 
     win.forEach((element) => {
       if (
-        board[element[0]] === symbol &&
-        board[element[1]] === symbol &&
-        board[element[2]] === symbol
+        board[element[0]] === symbol
+        && board[element[1]] === symbol
+        && board[element[2]] === symbol
       ) {
         endgame = true;
       }
@@ -125,10 +122,20 @@ const displayController = (() => {
   };
 
   const displayScore = () => {
-    score1 = document.getElementById('score1');
-    score2 = document.getElementById('score2');
+    const score1 = document.getElementById('score1');
+    const score2 = document.getElementById('score2');
     score1.innerHTML = `<p class="name1">${player1.getName()}</p> <p class="score">${player1.getScore()} </p>`;
     score2.innerHTML = `<p class="name2">${player2.getName()} </p> <p class="score">${player2.getScore()} </p>`;
+  };
+  
+  const switchTurn = (counter) => {
+    if (counter % 2 === 0) {
+      document.querySelector('.name1').classList.add('red');
+      document.querySelector('.name2').classList.remove('red');
+    } else {
+      document.querySelector('.name2').classList.add('red');
+      document.querySelector('.name1').classList.remove('red');
+    }
   };
 
   const markEachBoard = (e) => {
