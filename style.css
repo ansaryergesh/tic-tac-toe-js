@@ -309,6 +309,7 @@ span {
 #form {
   display: flex;
   flex-direction: column;
+  animation: moveInRight 1.5s ease-out;
 }
 
 input[type=text] {
@@ -343,6 +344,39 @@ input[type=text] {
   opacity: 0;
 }
 
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .grid-container {
     grid-template-rows: 150px 150px 150px;
@@ -351,5 +385,9 @@ input[type=text] {
 
   .head-text {
     font-size: 30px;
+    font-weight: 500;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
   }
 }
