@@ -113,18 +113,25 @@ const gameBoard = (() => {
       });
     };
   
-    function winMessage(name) {
+    const winMessage = (name) => {
       msg.innerText = `${name} is winner!`;
     }
   
-  const overlayTrue = () => {
-    document.getElementById('buttons').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-    document.querySelector('.name2').classList.remove('red');
-    document.querySelector('.name1').classList.remove('red');
-  };
+    const overlayTrue = () => {
+      document.getElementById('buttons').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+      document.querySelector('.name2').classList.remove('red');
+      document.querySelector('.name1').classList.remove('red');
+    };
+  
+    const displayScore = () => {
+      score1 = document.getElementById('score1');
+      score2 = document.getElementById('score2')
+      score1.innerHTML = `<p class="name1">${player1.getName()}</p> <p class="score">${player1.getScore()} </p>`;
+      score2.innerHTML = `<p class="name2">${player2.getName()} </p> <p class="score">${player2.getScore()} </p>`;
+    }
 
-    function markEachBoard(e) {
+    const markEachBoard = (e) => {
       const positionBox = parseInt(e.target.getAttribute('id'), 10);
       if (gameBoard.getBoard()[positionBox] === ' ') {
         counter % 2 === 0
@@ -138,8 +145,8 @@ const gameBoard = (() => {
         if (endgame === true) {
           const namePlayer =  counter % 2 === 0 ? player2.getName() : player1.getName();
           winMessage(namePlayer);
-          counter % 2 === 0 ? player2.addScore() : player1.addScore();
-        displayScore();  
+        counter % 2 === 0 ? player2.addScore() : player1.addScore();
+        displayScore();
           overlayTrue();
         }
   
@@ -164,26 +171,18 @@ const gameBoard = (() => {
         boxCell.addEventListener('click', markEachBoard);
       }
     };
-
-    const displayScore = () => {
-        score1 = document.getElementById('score1');
-        score2 = document.getElementById('score2')
-        score1.innerHTML = `<p class="name1">${player1.getName()}</p> <p class="score">${player1.getScore()} </p>`;
-        score2.innerHTML = `<p class="name2">${player2.getName()} </p> <p class="score">${player2.getScore()} </p>`;
-    }
   
-    function playBtn() {
+    const playBtn = () => {
       const btnPlay = document.getElementById('btn-play');
       btnPlay.addEventListener('click', () => {
         giveName();
         document.getElementById('board').classList.remove('hide');
         document.getElementById('buttons').classList.remove('hide');
         document.querySelector('.main-form').classList.add('hide');
-      document.getElementById('score-table').classList.remove('hide');
+        document.getElementById('score-table').classList.remove('hide');
         document.getElementById("buttons").style.display = 'none';
         document.getElementById('overlay').style.display = 'none';
         displayScore();
-
       });
     }
     const newGame = () => {
