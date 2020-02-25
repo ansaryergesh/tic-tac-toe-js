@@ -17,7 +17,7 @@ const gameBoard = (() => {
   
     return { getBoard, resetBoard };
 })();
-  
+
 const Player = (name, mark) => {
   let score = 0;
   const getName = () => name;
@@ -31,9 +31,9 @@ const Player = (name, mark) => {
 
   const addScore = () => {
     score += 1;
-  }
+  };
 
-  return { 
+  return {
     getName,
     getMark,
     addMark,
@@ -72,13 +72,13 @@ const displayController = (() => {
   function clickCounter() {
     return () => {
       counter += 1;
-    return counter;
+      return counter;
     };
   }
 
   function resetClicks() {
     document.getElementById('turn-text').innerText = '';
-  counter = 0;
+    counter = 0;
     switchTurn(counter);
     endgame = false;
     for (const boxCell of boxCells) {
@@ -150,16 +150,16 @@ const displayController = (() => {
       const mark = counter % 2 === 0 ? player2.getMark() : player1.getMark();
       winning(gameBoard.getBoard(), mark);
       if (endgame === true) {
-        const namePlayer =  counter % 2 === 0 ? player2.getName() : player1.getName();
+        const namePlayer = counter % 2 === 0 ? player2.getName() : player1.getName();
         winMessage(namePlayer);
-      counter % 2 === 0 ? player2.addScore() : player1.addScore();
-      displayScore();
+        counter % 2 === 0 ? player2.addScore() : player1.addScore();
+        displayScore();
         overlayTrue();
       }
 
       if (counter === 9 && endgame !== true) {
         msg.innerText = 'draw game!';
-      endgame = true;
+        endgame = true;
         overlayTrue();
       }
 
@@ -168,7 +168,7 @@ const displayController = (() => {
           boxCell.removeEventListener('click', markEachBoard);
         }
 
-        document.getElementById('turn-text').classList.add('shaking')
+        document.getElementById('turn-text').classList.add('shaking');
       }
     }
   };
@@ -187,7 +187,7 @@ const displayController = (() => {
       document.getElementById('buttons').classList.remove('hide');
       document.querySelector('.main-form').classList.add('hide');
       document.getElementById('score-table').classList.remove('hide');
-      document.getElementById("buttons").style.display = 'none';
+      document.getElementById('buttons').style.display = 'none';
       document.getElementById('overlay').style.display = 'none';
       displayScore();
     });
@@ -206,7 +206,7 @@ const displayController = (() => {
       gameBoard.resetBoard();
       resetClicks();
       document.getElementById('turn-text').classList.remove('shaking');
-    document.getElementById('buttons').style.display = 'none';
+      document.getElementById('buttons').style.display = 'none';
       document.getElementById('overlay').style.display = 'none';
     });
   };
