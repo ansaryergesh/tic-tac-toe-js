@@ -1,69 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <title>Tic-Tac-Toe</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="animation-area">
-        <ul class="elems">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+      <ul class="elems">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
 
     <div class="main-form">
-        <p class="head-text">Welcome! Play the Tic-Tac-Toe!</p>
-        <form id="form">
-
-            <input id="player-1" type="text" placeholder="Player 1">
-            <input id="player-2" type="text" placeholder="Player 2">
-            <input type="button" id="btn-play" value="PLAY">
-        </form>
+      <p class="head-text">Welcome! Play the Tic-Tac-Toe!</p>
+      <form id="form">
+        <input id="player-1" type="text" placeholder="Player 1" />
+        <input id="player-2" type="text" placeholder="Player 2" />
+        <input type="button" id="btn-play" value="PLAY" />
+      </form>
     </div>
 
     <h3 id="turn-text"></h3>
 
     <div class="container">
-        <div class="grid-container hide" id="board">
-            <div id="0" class="box" data-position="0"></div>
-            <div id="1" class="box" data-position="1"></div>
-            <div id="2" class="box" data-position="2"></div>
-            <div id="3" class="box" data-position="3"></div>
-            <div id="4" class="box" data-position="4"></div>
-            <div id="5" class="box" data-position="5"></div>
-            <div id="6" class="box" data-position="6"></div>
-            <div id="7" class="box" data-position="7"></div>
-            <div id="8" class="box" data-position="8"></div>
-        </div>
-        <br>
-
+      <div class="grid-container hide" id="board">
+        <div id="0" class="box" data-position="0"></div>
+        <div id="1" class="box" data-position="1"></div>
+        <div id="2" class="box" data-position="2"></div>
+        <div id="3" class="box" data-position="3"></div>
+        <div id="4" class="box" data-position="4"></div>
+        <div id="5" class="box" data-position="5"></div>
+        <div id="6" class="box" data-position="6"></div>
+        <div id="7" class="box" data-position="7"></div>
+        <div id="8" class="box" data-position="8"></div>
+      </div>
+      <br />
     </div>
 
     <div class="hide" id="score-table">
-        <h3 id="score1"></h3>
-        <h3 id="score2"></h3>
+      <h3 id="score1"></h3>
+      <h3 id="score2"></h3>
     </div>
     <div id="buttons" class="hide">
-        <input type="button" id="restart" value="Play Again">
-        <input type="button" id="button" value="New Game">
+      <input type="button" id="restart" value="Play Again" />
+      <input type="button" id="button" value="New Game" />
     </div>
     <div class="overlay" id="overlay" style="display:none;"></div>
 
+    <audio id="audioID">
+      <source
+        src="http://iss240.net/tempfiles/menu-click/1.ogg"
+        type="audio/ogg"
+      />
+      <source
+        src="http://iss240.net/tempfiles/menu-click/1.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
     <script src="js/app.js"></script>
-
-</body>
-
+  </body>
 </html>

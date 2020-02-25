@@ -51,6 +51,7 @@ const displayController = (() => {
   const p2 = document.getElementById('player-2');
   let counter = 0;
   let endgame = false;
+  const audio1 = document.getElementById("audioID");
 
   
 
@@ -132,6 +133,7 @@ const displayController = (() => {
   };
 
   const markEachBoard = (e) => {
+    audio1.play();
     const positionBox = parseInt(e.target.getAttribute('id'), 10);
     if (gameBoard.getBoard()[positionBox] === ' ') {
       counter % 2 === 0
