@@ -71,7 +71,8 @@ const gameBoard = (() => {
     }
   
     function resetClicks() {
-      counter = 0;
+      document.getElementById('turn-text').innerText = '';
+      counter = Math.floor(Math.random() * Math.floor(2));;
       switchTurn(counter);
       endgame = false;
       for (const boxCell of boxCells) {
@@ -81,9 +82,12 @@ const gameBoard = (() => {
   
     const switchTurn = (counter) => {
       if (counter % 2 === 0) {
-        msg.innerText = `${player1.getName()}'s Turn`;
+        document.querySelector('.name1').classList.add('red');
+        document.querySelector('.name2').classList.remove('red');
       } else {
-        msg.innerText = `${player2.getName()}'s Turn`;
+        // msg.innerText = `${player2.getName()}'s Turn`;
+        document.querySelector('.name2').classList.add('red');
+        document.querySelector('.name1').classList.remove('red');
       }
     };
   
@@ -128,6 +132,8 @@ const gameBoard = (() => {
         if (endgame === true) {
           const namePlayer =  counter % 2 === 0 ? player2.getName() : player1.getName();
           winMessage(namePlayer);
+          document.querySelector('.name2').classList.remove('red');
+          document.querySelector('.name1').classList.remove('red');
           counter % 2 === 0 ? player2.addScore() : player1.addScore();
           displayScore();  
         }
@@ -156,8 +162,8 @@ const gameBoard = (() => {
     const displayScore = () => {
         score1 = document.getElementById('score1');
         score2 = document.getElementById('score2')
-        score1.innerText = `${player1.getName()}: ${player1.getScore()}`;
-        score2.innerText = `${player2.getName()}: ${player2.getScore()}`;
+        score1.innerHTML = `<p class="name1">${player1.getName()}</p> <p class="score">${player1.getScore()} </p>`;
+        score2.innerHTML = `<p class="name2">${player2.getName()} </p> <p class="score">${player2.getScore()} </p>`;
     }
   
     function playBtn() {
