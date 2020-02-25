@@ -4,9 +4,13 @@
   "description": "Tic-tac-toe game",
   "main": "app.js",
   "dependencies": {
+    "eslint-config-airbnb": "^18.0.1",
     "semver": "^7.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-config-airbnb-standard": "^3.0.1",
+    "eslint-plugin-import": "^2.20.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

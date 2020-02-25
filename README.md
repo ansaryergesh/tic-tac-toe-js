@@ -1,9 +1,11 @@
 # Tic-Tac-Toe
-< Tic-tac-toe game with sound effects and attracting design
+
+Tic-tac-toe game
 
 # Features
- - Two player/ Computer Player
- - Score table
+
+- Two player
+- Score table
 
 ## Built With Javascript
 
@@ -17,7 +19,7 @@
 
 ## Screenshot
 
-![alt text](img/comp.jpg)
+![alt text](img/tictactoe.gif)
 
 ## Getting Started
 
@@ -29,7 +31,7 @@ To use this project you will need to download this repository and save in your c
 
 ### Deployment
 
-  steps to run the webpage on the browser:
+steps to run the webpage on the browser:
 
 - open the index.html file with any browser
 
@@ -40,7 +42,6 @@ To use this project you will need to download this repository and save in your c
 - Github: [@ansaryergesh](https://github.com/ansaryergesh)
 - Twitter: [@ansaryergesh](https://twitter.com/ansaryergesh)
 - Linkedin: [Ansar Yergeshov](https://www.linkedin.com/in/ansaryergesh/)
-
 
 ## 🤝 Contributing
 
@@ -59,4 +60,3 @@ This page was inspired by my own bussines i'm a food-seller on my free times whi
 ## 📝 License
 
 This project is [MIT](lic.url) licensed.
-
