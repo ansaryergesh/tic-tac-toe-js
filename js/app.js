@@ -166,7 +166,7 @@ const gameBoard = (() => {
         giveName();
         document.getElementById('board').classList.remove('hide');
         document.getElementById('buttons').classList.remove('hide');
-        document.getElementById('form').classList.add('hide');
+        document.querySelector('.main-form').classList.add('hide');
         document.getElementById('score-table').classList.remove('hide');
         displayScore();
 
