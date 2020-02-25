@@ -46,6 +46,16 @@ body {
   margin-left: 10px;
 }
 
+a {
+  text-decoration: none;
+  margin-left: 35px;
+}
+
+a:hover {
+  color: rgb(29, 3, 3);
+}
+
+
 #score1,
 #score2 {
   margin-left: 25px;
