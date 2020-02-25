@@ -309,7 +309,7 @@ span {
 #form {
   display: flex;
   flex-direction: column;
-  animation: moveInRight 1.5s ease-out;
+  animation: moveInRight .3s ease-out;
 }
 
 input[type=text] {
@@ -321,8 +321,8 @@ input[type=text] {
   border: 1px solid orange;
 }
 
-#btn-play {
-  width: 40%;
+input[type=button] {
+  max-width: 200px;
   margin: auto;
   padding: 15px;
   border-radius: 15px;
@@ -334,14 +334,9 @@ input[type=text] {
   font-weight: bold;
 }
 
-#btn-play:hover {
+input[type=button]:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-#btn-hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
 }
 
 
@@ -387,7 +382,7 @@ input[type=text] {
     font-size: 30px;
     font-weight: 500;
     animation-name: moveInLeft;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
   }
 }
