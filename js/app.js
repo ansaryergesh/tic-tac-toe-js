@@ -72,7 +72,7 @@ const gameBoard = (() => {
   
     function resetClicks() {
       document.getElementById('turn-text').innerText = '';
-      counter = Math.floor(Math.random() * Math.floor(2));;
+      counter = 0;
       switchTurn(counter);
       endgame = false;
       for (const boxCell of boxCells) {
@@ -118,6 +118,12 @@ const gameBoard = (() => {
       msg.innerText = `${name} is winner!`;
     }
   
+    const overlayTrue = () =>  {
+      document.getElementById("buttons").style.display="block";
+      document.getElementById("overlay").style.display="block";
+      document.querySelector('.name2').classList.remove('red');
+      document.querySelector('.name1').classList.remove('red');
+    }
     function markEachBoard(e) {
       const positionBox = parseInt(e.target.getAttribute('id'), 10);
       if (gameBoard.getBoard()[positionBox] === ' ') {
@@ -132,17 +138,15 @@ const gameBoard = (() => {
         if (endgame === true) {
           const namePlayer =  counter % 2 === 0 ? player2.getName() : player1.getName();
           winMessage(namePlayer);
-          document.querySelector('.name2').classList.remove('red');
-          document.querySelector('.name1').classList.remove('red');
           counter % 2 === 0 ? player2.addScore() : player1.addScore();
           displayScore();  
-          document.getElementById("buttons").style.display="block";
-          document.getElementById("overlay").style.display="block";
+          overlayTrue();
         }
   
         if (counter === 9 && endgame !== true) {
           msg.innerText = 'draw game!';
           endgame = true;
+          overlayTrue();
         }
   
         if (endgame === true) {
@@ -176,6 +180,8 @@ const gameBoard = (() => {
         document.getElementById('buttons').classList.remove('hide');
         document.querySelector('.main-form').classList.add('hide');
         document.getElementById('score-table').classList.remove('hide');
+        document.getElementById("buttons").style.display="none";
+        document.getElementById("overlay").style.display="none";
         displayScore();
 
       });
