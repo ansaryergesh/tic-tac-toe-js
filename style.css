@@ -104,7 +104,7 @@ body {
 }
 
 .hide {
-  display: none
+  display: none;
 }
 
 .game-over {
@@ -290,32 +290,6 @@ span {
   }
 }
 
-
-/* popup */
-.setting {
-  display: block;
-  /* display: none; */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: 200ms ease-in-out;
-  border: 6px solid salmon;
-  padding: 2em;
-  width: 400px;
-  text-align: center;
-  background: #fff;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  border-radius: 10px;
-  z-index: 102;
-  width: 500px;
-  max-width: 80%;
-}
-
 .setting.active {
   transform: translate(-50%, -50%) scale(1);
 }
@@ -343,6 +317,16 @@ span {
   z-index: 100;
 }
 
+.eye {
+  font-size: 100px;
+  cursor: pointer;
+  margin-left: 15px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -100;
+}
 
 /* Media querie for 768 and max screens */
 

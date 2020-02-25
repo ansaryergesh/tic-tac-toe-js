@@ -49,6 +49,7 @@ const displayController = (() => {
   const boxCells = document.querySelectorAll('.box');
   const p1 = document.getElementById('player-1');
   const p2 = document.getElementById('player-2');
+  const eye = document.querySelector('.eye');
   let counter = 0;
   let endgame = false;
   const audio1 = document.getElementById("audioID");
@@ -118,10 +119,12 @@ const displayController = (() => {
   };
 
   const overlayTrue = () => {
+    document.querySelector('.eye').style.display = 'eye';
     document.getElementById('buttons').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
     document.querySelector('.name2').classList.remove('red');
     document.querySelector('.name1').classList.remove('red');
+    eye.style.zIndex = '100';
   };
 
   
@@ -196,6 +199,15 @@ const displayController = (() => {
       document.getElementById('overlay').style.display = 'none';
       displayScore();
     });
+
+    eye.addEventListener('mousedown', () => {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('buttons').style.display = 'none';
+    });
+
+    eye.addEventListener('mouseup',() => {
+      overlayTrue();
+    })
   };
 
   
@@ -215,6 +227,7 @@ const displayController = (() => {
       document.getElementById('turn-text').classList.remove('shaking');
       document.getElementById('buttons').style.display = 'none';
       document.getElementById('overlay').style.display = 'none';
+      eye.style.zIndex = '-100';
     });
   };
 
