@@ -49,43 +49,10 @@ const displayController = (() => {
   const boxCells = document.querySelectorAll('.box');
   const p1 = document.getElementById('player-1');
   const p2 = document.getElementById('player-2');
-  const countClicks = clickCounter();
   let counter = 0;
   let endgame = false;
 
-  function giveName() {
-    const name1 = p1.value;
-    const name2 = p2.value;
-    if (p1.value === '') {
-      player1 = Player('Player1', 'X');
-    } else {
-      player1 = Player(name1, 'X');
-    }
-
-    if (p2.value === '') {
-      player2 = Player('Player2', 'O');
-    } else {
-      player2 = Player(name2, 'O');
-    }
-  }
-
-  function clickCounter() {
-    return () => {
-      counter += 1;
-      return counter;
-    };
-  }
-
-  function resetClicks() {
-    document.getElementById('turn-text').innerText = '';
-    counter = 0;
-    switchTurn(counter);
-    endgame = false;
-    for (const boxCell of boxCells) {
-      boxCell.addEventListener('click', markEachBoard);
-    }
-  }
-
+  
 
   const winning = (board, symbol) => {
     const win = [
@@ -109,25 +76,32 @@ const displayController = (() => {
       }
     });
   };
-  
-  const winMessage = (name) => {
-    msg.innerText = `${name} is winner!`;
-  };
-  
-  const overlayTrue = () => {
-    document.getElementById('buttons').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-    document.querySelector('.name2').classList.remove('red');
-    document.querySelector('.name1').classList.remove('red');
-  };
 
-  const displayScore = () => {
-    const score1 = document.getElementById('score1');
-    const score2 = document.getElementById('score2');
-    score1.innerHTML = `<p class="name1">${player1.getName()}</p> <p class="score">${player1.getScore()} </p>`;
-    score2.innerHTML = `<p class="name2">${player2.getName()} </p> <p class="score">${player2.getScore()} </p>`;
-  };
   
+  function clickCounter() {
+    return () => {
+      counter += 1;
+      return counter;
+    };
+  }
+  const countClicks = clickCounter();
+
+  function giveName() {
+    const name1 = p1.value;
+    const name2 = p2.value;
+    if (p1.value === '') {
+      player1 = Player('Player1', 'X');
+    } else {
+      player1 = Player(name1, 'X');
+    }
+
+    if (p2.value === '') {
+      player2 = Player('Player2', 'O');
+    } else {
+      player2 = Player(name2, 'O');
+    }
+  }
+
   const switchTurn = (counter) => {
     if (counter % 2 === 0) {
       document.querySelector('.name1').classList.add('red');
@@ -136,6 +110,25 @@ const displayController = (() => {
       document.querySelector('.name2').classList.add('red');
       document.querySelector('.name1').classList.remove('red');
     }
+  };
+
+  const winMessage = (name) => {
+    msg.innerText = `${name} is winner!`;
+  };
+
+  const overlayTrue = () => {
+    document.getElementById('buttons').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+    document.querySelector('.name2').classList.remove('red');
+    document.querySelector('.name1').classList.remove('red');
+  };
+
+  
+  const displayScore = () => {
+    const score1 = document.getElementById('score1');
+    const score2 = document.getElementById('score2');
+    score1.innerHTML = `<p class="name1">${player1.getName()}</p> <p class="score">${player1.getScore()} </p>`;
+    score2.innerHTML = `<p class="name2">${player2.getName()} </p> <p class="score">${player2.getScore()} </p>`;
   };
 
   const markEachBoard = (e) => {
@@ -164,21 +157,31 @@ const displayController = (() => {
       }
 
       if (endgame === true) {
-        for (const boxCell of boxCells) {
+        boxCells.forEach((boxCell) => {
           boxCell.removeEventListener('click', markEachBoard);
-        }
+        });
 
         document.getElementById('turn-text').classList.add('shaking');
       }
     }
   };
-  
-  const playGame = () => {
-    for (const boxCell of boxCells) {
+
+  function resetClicks() {
+    document.getElementById('turn-text').innerText = '';
+    counter = 0;
+    switchTurn(counter);
+    endgame = false;
+    boxCells.forEach((boxCell) => {
       boxCell.addEventListener('click', markEachBoard);
-    }
+    });
+  }
+
+  const playGame = () => {
+    boxCells.forEach((boxCell) => {
+      boxCell.addEventListener('click', markEachBoard);
+    });
   };
-  
+
   const playBtn = () => {
     const btnPlay = document.getElementById('btn-play');
     btnPlay.addEventListener('click', () => {
@@ -193,6 +196,7 @@ const displayController = (() => {
     });
   };
 
+  
   const newGame = () => {
     const newBtn = document.getElementById('button');
     newBtn.addEventListener('click', () => {
@@ -200,6 +204,7 @@ const displayController = (() => {
     });
   };
 
+  
   const restartGame = () => {
     const rstBtn = document.getElementById('restart');
     rstBtn.addEventListener('click', () => {
@@ -224,15 +229,15 @@ const displayController = (() => {
   };
 })();
   
-  const gameController = (() => {
-    const gameActions = () => {
-      displayController.playGame();
-      displayController.newGame();
-      displayController.playBtn();
-      displayController.restartGame();
-    };
-    return { gameActions };
-  })();
+const gameController = (() => {
+  const gameActions = () => {
+    displayController.playGame();
+    displayController.newGame();
+    displayController.playBtn();
+    displayController.restartGame();
+  };
+  return { gameActions };
+})();
   
   gameController.gameActions();
   
