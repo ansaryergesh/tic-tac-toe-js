@@ -239,5 +239,5 @@ const gameController = (() => {
   return { gameActions };
 })();
   
-  gameController.gameActions();
+gameController.gameActions();
   
