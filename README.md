@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-Tic-tac-toe game with 3X3 board with sound effect and simple UI. Write your name and start to play a game. During the game, you will see scores of the players
+Tic-tac-toe game with 3X3 board with sound effect and simple UI. Write your name and start to play a game. During the game, you will see scores of the players.
 
 # Features
 
