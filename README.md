@@ -9,8 +9,8 @@ Tic-tac-toe game with 3X3 board with sound effect and simple UI. Write your name
 
 ## Built With Javascript
 
-- Html
-- Css
+- HTML
+- CSS
 - JavaScript
 
 ## Future Improvements
