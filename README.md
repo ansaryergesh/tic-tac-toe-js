@@ -26,7 +26,7 @@ Tic-tac-toe game with 3X3 board with sound effect and simple UI. Write your name
 
 ## Getting Started
 
--To start to use this proyect download this repository to your computer and descompress all the files, after open your terminal from the containing folder and open the index.html file on Google Chrome browser.
+To start to use this proyect download this repository to your computer and descompress all the files, after open your terminal from the containing folder and open the index.html file on Google Chrome browser.
 
 ### Setup
 
