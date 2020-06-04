@@ -34,7 +34,7 @@ To use this project you will need to download this repository and save in your c
 
 ### Deployment
 
-steps to run the webpage on the browser:
+Steps to run the webpage on the browser:
 
 - open the index.html file with any browser
 
