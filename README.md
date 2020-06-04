@@ -13,6 +13,9 @@ Tic-tac-toe game
 - Css
 - JavaScript
 
+## Future Improvements
+- Use SASS for styling
+- Add some bots to the game (play with Computer)
 ## Live Demo
 
 [Live Demo Link](https://ansaryergesh.github.io/tic-tac-toe-js/)
