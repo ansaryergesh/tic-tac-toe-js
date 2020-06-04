@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-Tic-tac-toe game
+Tic-tac-toe game with 3X3 board. Write your name and start to play a game. During the game, you will see scores of the players
 
 # Features
 
